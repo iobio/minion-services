@@ -1,29 +1,12 @@
 #!/usr/bin/env node
+// Chase Miller 2013-2016
 
-// temporary until i understand why freebayes seg faults on the stream
-process.on('uncaughtException', function (exception) {
-   // handle or ignore error
-});
+// Initialize Server
+var port = 7100;
+    minion = require('../index.js')(port);
 
-var minion = require('../minion'),
-    http = require('http'),
-    app = minion(),
-    server = http.createServer(app),
-    BinaryServer = require('binaryjs').BinaryServer,
-    port = 8061;
 
-// process command line options
-process.argv.forEach(function (val, index, array) {
-  if(val == '--port' && array[index+1]) port = array[index+1];
-});    
-
-// setup socket
-var bs = BinaryServer({server: server});
-
-// start server
-server.listen(port);
-
-// define tool
+// Define tool
 var tool = {
    apiVersion : "0.1",
    name: 'bcftools',
@@ -34,7 +17,7 @@ var tool = {
       var fields = line.split("\t");
       if (line && line.charAt(0) != '#') {
          return JSON.stringify(
-            { 
+            {
                data : {
                 chrom    : fields[0],
                 pos      : fields[1],
@@ -49,7 +32,7 @@ var tool = {
                }
             }
          );
-      } else if(line.slice(0,6) == "#CHROM") 
+      } else if(line.slice(0,6) == "#CHROM")
          return JSON.stringify( {header: { samples : fields.slice(9, fields.length) } } );
    },
    // instructional data used in /help
@@ -57,9 +40,6 @@ var tool = {
    exampleUrl : ""
 };
 
-// add tool to minion server
-minion.addTool(tool);
-
-// start minion socket
-minion.listen(bs);
+// Start minion socket
+minion.listen(tool);
 console.log('iobio server started on port ' + port);

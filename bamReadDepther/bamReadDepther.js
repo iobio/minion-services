@@ -1,15 +1,16 @@
 #!/usr/bin/env node
+// Chase Miller 2013-2016
 
 
 var port = 8021,
     minion = require('../index.js')(port);    ;
-    
+
 // define tool
 tool = {
     apiVersion : "0.1",
     name : 'bam read depther',
     path :  'bamReadDeptherHelper.sh',
-    description : 'quickly approximates read depth coverage data using the bai index file associated with a bam',    
+    description : 'quickly approximates read depth coverage data using the bai index file associated with a bam',
     exampleUrl : "to add"
 };
 

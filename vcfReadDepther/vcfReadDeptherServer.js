@@ -1,27 +1,13 @@
 #!/usr/bin/env node
+// Chase Miller 2013-2016
 
-// initialize server
-var minion = require('../minion'),
-    http = require('http'),
-    app = minion(),
-    server = http.createServer(app),
-    BinaryServer = require('binaryjs').BinaryServer,
-    port = 7062;
-    
-// process command line options
-process.argv.forEach(function (val, index, array) {
-  if(val == '--port' && array[index+1]) port = array[index+1];
-});    
-
-// setup socket
-var bs = BinaryServer({server: server});
-
-// start server
-server.listen(port);
+// Initialize Server
+var port = 7100;
+    minion = require('../index.js')(port);
 
 
-// define tool
-tool = {
+// Define tool
+var tool = {
     apiVersion :  "0.1",
     name :        'vcf read depther',
     path :        'vcfReadDeptherHelper.sh',
@@ -29,9 +15,6 @@ tool = {
     exampleUrl :  "vcfReadDepther -i example.gz.vcf.tbi"
 };
 
-// add tool to minion server
-minion.addTool(tool);
-
-// start minion socket
-minion.listen(bs);
+// Start minion socket
+minion.listen(tool);
 console.log('iobio server started on port ' + port);
