@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Chase Miller 2013-2015
 
-var port = 7030,
-    minion = require('../index.js')(port);    
+var port = 4014,
+    minion = require('../index.js')(port);
 
 // define tool
 var tool = {
@@ -15,7 +15,7 @@ var tool = {
       data = data.substr(0, data.length-1)
       data = data.replace(/\n/g, ",");
       data = data.replace(/\\/g, '\\\\' )
-      data = "[" + data + "]"; 
+      data = "[" + data + "]";
       return data;
    },
    // instructional data used in /help

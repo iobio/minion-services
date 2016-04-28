@@ -2,7 +2,7 @@
 // Chase Miller 2013-2016
 
 // Initialize Server
-var port = 7100;
+var port = 4011;
     minion = require('../index.js')(port);
 
 

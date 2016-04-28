@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-var port = 7077,
-    minion = require('../index.js')(port);    
+var port = 4010,
+    minion = require('../index.js')(port);
 
 // define tool
 var tool = {

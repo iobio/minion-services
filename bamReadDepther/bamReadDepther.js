@@ -2,7 +2,7 @@
 // Chase Miller 2013-2016
 
 
-var port = 8021,
+var port = 4012,
     minion = require('../index.js')(port);    ;
 
 // define tool
