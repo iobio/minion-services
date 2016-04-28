@@ -5,3 +5,8 @@ General utility for vcf and bcf
 [services.iobio.io/bcftools](http://services.iobio.io/bcftools)
 
 ### Usage
+Same as [bcftools](http://www.htslib.org/doc/bcftools-1.0.html)
+
+### Dependencies
+These tools need to be in the ```minion/bin/``` directory
+ * [bcftools](http://www.htslib.org/download/)

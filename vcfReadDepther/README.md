@@ -5,3 +5,7 @@ Estimate variant coverage based on .tbx file
 [services.iobio.io/vcfreaddepther](http://services.iobio.io/vcfreaddepther)
 
 ### Usage
+
+### Dependencies
+These tools need to be in the ```minion/bin/``` directory
+ * vcfReadDepther - provided
