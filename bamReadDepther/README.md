@@ -2,6 +2,6 @@
 Estimate read coverage based on .bai file
 
 ### Location
-[services.iobio.io/bamReadDepther](http://services.iobio.io/bamReadDepther)
+[services.iobio.io/bamreaddepther](http://services.iobio.io/bamreaddepther)
 
 ### Usage
