@@ -1,5 +1,5 @@
 # Bamstatsalive Webservice
-Generate stats for bam streams
+A utility that calculates statistics off a bam file stream, reporting at a given interval in json
 
 ### Location
 [services.iobio.io/bamstatsalive](http://services.iobio.io/bamstatsalive)

@@ -1,5 +1,5 @@
 # AF Webservice
-Add allele frequency information to a vcf
+Annotate VCF stream with background allele frequencies in 1000G and ExAC projects
 
 ### Location
 [services.iobio.io/af](http://services.iobio.io/af)
